@@ -1,0 +1,161 @@
+.item1{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 60px;
+    margin-right: 450px;
+    
+    width: 400px ;
+    height: 400px;
+}
+
+.item2{
+
+    background-image: radial-gradient(rgb(11, 81, 109) , rgba(5, 226, 255, 0.993)
+    );
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+
+    animation-name: item2;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-direction:normal;
+    animation-timing-function:cubic-bezier(.95,.48,.6,.27);
+}
+
+
+@keyframes item2{
+
+    0%{
+        position: relative;
+        top: 100px;
+        right: 100px;
+    }
+
+    25%{
+        position: relative;
+        top: -40px;
+        right: 100px;
+       
+
+    }
+
+    50%{
+
+        position: relative;
+        top: 100px;
+        right: -100px;
+    }
+
+    75%{
+
+        position: relative;
+        top: -40px;
+        right: -100px;
+    }
+
+    100%{
+
+        position: relative;
+        top: 100px;
+        right: 100px;
+    }
+}
+
+
+
+
+.item3{
+
+    background-image:radial-gradient(rgb(5, 71, 102) , rgb(0, 225, 255) );
+    width: 300px;
+    height: 20px;
+    border-radius: 80%;
+    margin-top: 50px;
+    
+    
+
+    animation-name: item3;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+@keyframes item3{
+
+0%{
+    transform: rotate(30deg);
+}
+
+35%{
+
+    transform: rotate(40deg);
+}
+
+65%{
+
+    transform: rotate(-40deg);
+}
+
+
+
+
+100%{
+
+    transform: rotate(-40deg);
+}
+}
+
+body{
+    width: 800px;
+    height: 800px;
+
+    background-image: radial-gradient(rgb(1, 14, 20) , rgb(6, 76, 97) ,  rgb(0, 247, 255));
+}
+
+@font-face {
+    font-family: fantezi;
+    src: url(./This\ Cafe.otf);
+}
+
+.item4{
+
+    font-family: fantezi;
+    font-size: 50pt;
+    margin-right: 550px;
+
+
+}
+
+p{
+    color: rgb(0, 0, 0);
+
+    animation-name: item4;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    
+
+
+}
+
+@keyframes item4{
+
+    from{
+
+        color: rgb(0, 0, 0);
+    }
+
+    to{
+        color: rgb(4, 247, 255);
+    }
+}
+
+
+
