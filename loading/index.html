@@ -1,27 +1,77 @@
-
 <!DOCTYPE html>
-<html >
+<html lang="fa" dir="rtl">
 <head>
-    <link rel="shortcut icon" href="./6_Secrets_houseplants_would_tell_blackred.jpg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title >animation </title>
+    <title>در حال بارگذاری</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
 </head>
+<body>
 
-<body dir="rtl">
+    <div class="scene">
+        <div class="stars"></div>
 
-    <div class="item1" >
-        <div class="item2"></div>
-        <div class="item3"></div>
+        <div class="loader" role="status" aria-label="در حال بارگذاری">
+            <div class="ring ring--outer">
+                <span class="comet"></span>
+                <span class="comet comet--b"></span>
+            </div>
+            <div class="ring ring--mid">
+                <span class="comet"></span>
+            </div>
+            <div class="ring ring--inner">
+                <span class="comet"></span>
+            </div>
+
+            <div class="orbit orbit--1"><span class="satellite"></span></div>
+            <div class="orbit orbit--2"><span class="satellite satellite--alt"></span></div>
+
+            <div class="core">
+                <div class="core__inner"></div>
+            </div>
+        </div>
+
+        <div class="hud">
+            <p class="hud__label">
+                در حال بارگذاری
+                <span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span>
+            </p>
+            <p class="hud__percent" id="percent">۰٪</p>
+            <div class="hud__bar">
+                <div class="hud__bar-fill" id="barFill"></div>
+            </div>
+        </div>
     </div>
 
-    <div class="item4">
-       <p>...loading</p>
-    </div>
+    <script>
+        (function () {
+            var faDigits = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
+            function toFa(n) {
+                return String(n).split("").map(function (d) {
+                    return faDigits[d] !== undefined ? faDigits[d] : d;
+                }).join("");
+            }
 
+            var percentEl = document.getElementById("percent");
+            var barEl = document.getElementById("barFill");
+            var value = 0;
 
-   
+            function tick() {
+                value += Math.random() * 4 + 1;
+                if (value >= 100) {
+                    value = 0;
+                }
+                var rounded = Math.floor(value);
+                percentEl.textContent = toFa(rounded) + "٪";
+                barEl.style.width = rounded + "%";
+                setTimeout(tick, 120);
+            }
+            tick();
+        })();
+    </script>
+
 </body>
 </html>
